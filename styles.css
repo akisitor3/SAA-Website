@@ -1,0 +1,226 @@
+:root {
+  color-scheme: dark;
+  --white: #ffffff;
+  --soft: rgba(255, 255, 255, 0.78);
+  --line: rgba(255, 255, 255, 0.18);
+  --ink: #071018;
+  --orange: #ef6f2e;
+  --blue: #0d5d7f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--white);
+  background: var(--ink);
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.maintenance-page {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(20px, 3.2vw, 48px);
+}
+
+.hero-image,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  object-fit: cover;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(5, 14, 20, 0.96) 0%, rgba(5, 14, 20, 0.82) 48%, rgba(5, 14, 20, 0.36) 100%),
+    linear-gradient(180deg, rgba(5, 14, 20, 0.12), rgba(5, 14, 20, 0.7));
+}
+
+.maintenance-shell {
+  position: relative;
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 410px);
+  gap: clamp(18px, 3vw, 28px);
+  align-items: stretch;
+}
+
+.maintenance-card,
+.contact-box {
+  width: min(760px, 100%);
+  padding: clamp(24px, 4vw, 46px);
+  border: 1px solid var(--line);
+  background: rgba(7, 16, 24, 0.58);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+}
+
+.contact-box {
+  width: 100%;
+  align-self: end;
+  padding: clamp(24px, 3vw, 34px);
+  background:
+    linear-gradient(180deg, rgba(13, 93, 127, 0.42), rgba(7, 16, 24, 0.66)),
+    rgba(7, 16, 24, 0.74);
+}
+
+.brand-logo {
+  display: block;
+  width: min(310px, 72vw);
+  margin-bottom: clamp(28px, 4vw, 42px);
+}
+
+.brand-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.45));
+}
+
+.eyebrow {
+  margin: 0 0 15px;
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  max-width: 690px;
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.lead {
+  max-width: 630px;
+  margin: 26px 0 0;
+  color: var(--soft);
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.contact-label {
+  display: inline-flex;
+  margin: 0 0 18px;
+  padding: 8px 10px;
+  color: #ffe1cf;
+  background: rgba(239, 111, 46, 0.18);
+  border: 1px solid rgba(239, 111, 46, 0.38);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-box h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.contact-copy {
+  margin: 14px 0 22px;
+  color: var(--soft);
+  line-height: 1.58;
+}
+
+.contact-links {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-link {
+  display: grid;
+  gap: 5px;
+  padding: 16px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.contact-link.primary {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.contact-link span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-link strong {
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  overflow-wrap: anywhere;
+}
+
+.mini-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.mini-services span {
+  padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.82rem;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(239, 111, 46, 0.82);
+  outline-offset: 4px;
+}
+
+@media (max-width: 680px) {
+  .maintenance-page {
+    align-items: start;
+    padding: 18px 18px 90px;
+  }
+
+  .maintenance-card {
+    margin-top: 18px;
+    padding: 24px;
+  }
+
+  .maintenance-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 24px;
+  }
+
+  .brand-logo {
+    margin-bottom: 54px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 17vw, 5rem);
+  }
+
+}
